@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <p>THis is index page</p>
+    <img src="{% static 'brain.jpeg' %}">
+    <a href="{% url 'contact' %}">Click to go to Contact page </a>
+    <button onclick="buttonFunc()">Click me!</button>
+
+    <form   action="{% url 'result' %}">
+        {% csrf_token %}
+        <input type="text" name="user_input">
+        <input type="submit" value="Submit">
+    </form>
+
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+</body>
+</html>
