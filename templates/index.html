@@ -9,12 +9,34 @@
 <body>
     <p>THis is index page</p>
     <img src="{% static 'brain.jpeg' %}">
-    <a href="{% url 'contact' %}">Click to go to Contact page </a>
+    <p><a href="{% url 'contact' %}">Click to go to Contact page </a></p>
     <button onclick="buttonFunc()">Click me!</button>
+    <br>
+    <br>
+    <p>Get your Titanic predictions</p>
+    <p>Enter in the details of a made up person on Titanic voyage</p>
+
 
     <form   action="{% url 'result' %}">
         {% csrf_token %}
-        <input type="text" name="user_input">
+
+        <p>pclass</p>
+        <input type="text" name="pclass">
+        <p>sex</p>
+        <input type="text" name="sex">
+        <p>Age</p>
+        <input type="text" name="age">
+        <p>sibsp</p>
+        <input type="text" name="sibsp">
+        <p>parch</p>
+        <input type="text" name="parch">
+        <p>fare</p>
+        <input type="text" name="fare">
+        <p>embarked</p>
+        <input type="text" name="embarked">
+        <p>title</p>
+        <input type="text" name="title">
+
         <input type="submit" value="Submit">
     </form>
 
