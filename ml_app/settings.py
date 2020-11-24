@@ -25,7 +25,7 @@ SECRET_KEY = 'qc%z4=*ile07yt#i!zvq_m$vce(-p_3u$2oq8bnk$ey_&_jxdh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['18.184.7.137', 'kampf.pro', 'www.kampf.pro']
+ALLOWED_HOSTS = ['18.184.7.137', 'kampf.pro', 'www.kampf.pro', '127.0.0.1']
 
 
 # Application definition

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Would you die on the titanic ?</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <a href="{% url 'home' %}">Home</a>
+    <br>
+    <h1>Would you die on the titanic ?</h1>
+
+    <p>Get your Titanic predictions</p>
+    <p>Enter in the details of a made up person on Titanic voyage</p>
+
+df.Sex.replace(('male','female'), (0,1), inplace = True)
+df.Embarked.replace(('S','C','Q'), (0,1,2), inplace = True)
+df.Title.replace(('Mr','Miss','Mrs','Master','Dr','Rev','Officer','Royalty'), (0,1,2,3,4,5,6,7), inplace = True)
+
+
+    <form   action="{% url 'titanic_result' %}">
+        {% csrf_token %}
+
+        <p>Ticket class</p>
+        <select name="pclass">
+            <option value="1" selected>1 Class</option>
+            <option value="2">2 Class</option>
+            <option value="3">3 Class</option>
+        </select>
+        <p>Sex</p>
+        <select name="sex">
+            <option value="0" selected>Male</option>
+            <option value="1">Female</option>
+        </select>
+        <p>Age</p>
+        <input type="number" name="age">
+        <p># of siblings / spouses aboard the Titanic</p>
+        <input type="number" name="sibsp">
+        <p># of parents / children aboard the Titanic</p>
+        <input type="number" name="parch">
+        <p>Passenger fare</p>
+        <input type="number" name="fare">
+        <p>Port of Embarkation</p>
+        <select name="embarked">
+            <option value="0" selected>Southampton</option>
+            <option value="1" >Cherbourg</option>
+            <option value="2" >Queenstown</option>
+        </select>
+        <p>title</p>
+         <select name="title">
+             <option value="0" selected>Mr</option>
+             <option value="1" >Miss</option>
+             <option value="2" >Mrs</option>
+             <option value="3" >Master</option>
+             <option value="4" >Dr</option>
+             <option value="5" >Rev</option>
+             <option value="6" >Officer</option>
+             <option value="7" >Royalty</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+</body>
+</html>

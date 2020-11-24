@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="{% static 'main.css' %}">
 </head>
 <body>
-    <p>This is result page</p>
+    <a href="{% url 'home' %}">Home</a>
+    <br>
+    <h1>This is result page</h1>
     <img src="{% static 'brain.jpeg' %}">
     <p>{{ prediction }}</p>
 
