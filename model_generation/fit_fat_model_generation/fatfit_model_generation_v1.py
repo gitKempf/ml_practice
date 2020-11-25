@@ -87,14 +87,17 @@ def show_image(index):
 
 
 images_to_array('fat_man')
+print("Fat man data fetched")
 images_to_array('fit_man')
+print("Fit man data fetched")
 images_to_array('fat_woman')
+print("Fat woman data fetched")
 images_to_array('fit_woman')
+print("Fit woman data fetched")
 
 Y = to_categorical(Y, num_classes=num_classes)
 # normalayzing X data
 X = (np.array(X) - 127.5) / 127.5
-# show_image(47)
 
 model = Sequential()
 model.add(Conv2D(32, (5,5), padding='same', activation='relu', input_shape=(200,200,3)))
@@ -120,10 +123,12 @@ model.summary()
 
 X_train, X_test, y_train, y_test = train_test_split(X,Y, test_size=0.2)
 
+print("Compiling model")
 optimizer = Adam(lr=0.001)
 model.compile(optimizer=optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
 h = model.fit(X_train, y_train, batch_size=10, epochs=35, validation_data = (X_test, y_test))
 model.save('fit_fat_CNN_V2.h5')
+print("Model saved")
 
 # plt.plot(h.history['accuracy'])
 # plt.plot(h.history['val_accuracy'])
@@ -148,9 +153,9 @@ def fatness_prediction(index_number):
   
 
 
-fatness_prediction(1900)
+# fatness_prediction(1900)
 
-fatness_prediction(1000)
+# fatness_prediction(1000)
 
 # model_generation = load_model('fit_fat_CNN.h5')
 
