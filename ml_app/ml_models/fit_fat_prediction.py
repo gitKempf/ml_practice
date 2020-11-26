@@ -39,13 +39,13 @@ def fit_fat_predict(image_loaded):
     """
     name_encode = {"fat_man": 0, "fit_man": 1, "fat_woman": 2, "fit_woman": 3}
 
-    model = load_model('ml_app/ml_models/fit_fat_CNN_v1.h5')
+    model = load_model('ml_app/ml_models/fit_fat_CNN_V2.h5')
 
     image = Image.open(image_loaded)
     croped_image = crop_to_square(image)
-    resized_image = Image.Image.resize(croped_image, (200, 200))
+    resized_image = Image.Image.resize(croped_image, (100, 100))
     image_normalized = (np.array(resized_image) - 127.5) / 127.5
-    reshaped_img = image_normalized.reshape(1, 200, 200, 3)
+    reshaped_img = image_normalized.reshape(1, 100, 100, 3)
     prediction = model.predict_classes(reshaped_img)
     for key, value in name_encode.items():
         if value == prediction:
